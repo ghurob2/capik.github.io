@@ -1,0 +1,175 @@
+/* -*- css-indent-offset: 8; tab-width: 8 -*- */
+
+body {
+	width: 98%;
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+
+	font-family: sans-serif;
+}
+
+blockquote {
+	border-left: solid .2em #DDDDFF;
+	margin-left: 1.5em;
+	padding-left: 0.3em;
+	font-style: italic;
+}
+
+footer {
+	text-align: center;
+	font-size: 70%;
+	color: #333333;
+}
+
+/* little hack to make nested lists not take up extra vertical space */
+li > p:first-child { margin-top: 0; }
+li p + ul { margin-top: -1em; }
+
+/* code elements */
+
+kbd, code, samp, tt, pre {
+	background: #DDDDFF;
+	white-space: pre;
+}
+@media print {
+	kbd, code, samp, tt, pre {
+		white-space: pre-wrap;
+	}
+}
+
+var {
+	color: #008800;
+}
+
+pre, ul.tree {
+	margin: auto 2em;
+	padding: .5em;
+	overflow: auto;
+	border: solid 1px #AAAAAA;
+}
+
+pre hr {
+	height: 0px;
+	border: none;
+	border-top: solid 1px #AAAAAA;
+}
+
+/* lists that look like `tree` output */
+ul.tree {
+	font-family: monospace;
+	background: #DDDDFF;
+}
+ul.tree li {
+	list-style-type: none;
+}
+ul.tree ul {
+	padding-left: 0;
+}
+ul.tree ul li {
+	/* draw the vertical lines */
+	margin-left: calc(0.5ch - 1px);
+	border-left: solid 1px black;
+	/* and indent 4 chars */
+	padding-left: 3.5ch; /* 4ch - 0.5ch for the margin-left above */
+}
+ul.tree ul li::before {
+	/* make a non-empty inline-block element */
+	display: inline-block;
+	content: "Â "; /* a unicode non-breaking space */
+	/* un-indent */
+	margin-left: calc(-3.5ch - 1px); /* to match the padding-left above */
+	border-left: solid 1px transparent;
+	/* draw the horizontal lines */
+	border-bottom: solid 1px black;
+	top: 0;
+	height: 1ex;
+	width: 2.5ch;
+	margin-right: 1ch;
+}
+ul.tree ul li:last-child {
+	/* let the li::before psuedo-element draw the last part of the vertical line. */
+	border-left: solid 1px transparent;
+}
+ul.tree ul li:last-child::before {
+	border-left: solid 1px black;
+}
+
+/* table elements */
+
+table, td, th {
+	border-collapse: collapse;
+	border: solid 1px #AAAAAA;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td, th {
+	padding-left: .5em;
+	padding-right: .5em;
+}
+th {
+	background: #F5F5F5;
+}
+
+table > caption {
+	text-align: left;
+}
+
+table pre {
+	margin: auto;
+}
+
+/* heading elements */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+}
+
+h1 {
+	text-align: center;
+	background-color: #629517A1;
+}
+
+caption > h1 { /* don't make the headings in captions huge */
+	font-size: 100%;
+}
+
+/* hyperlink elements */
+
+a {
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	text-decoration: underline;
+}
+
+.wrapper{
+  border:1px solid black;
+  padding:10px;
+}
+.right {
+  border: 1px solid black;
+  clear: right;
+}
+.black {
+  float: right;
+  margin: 0;
+  background-color: black;
+  color: #fff;
+  width:20%;
+}
+.red {
+  float: right;
+  margin: 0;
+  /*background-color: pink;*/
+  width:20%;
+}
+p {
+  width: 95%;
+}
+
